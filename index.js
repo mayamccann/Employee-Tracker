@@ -13,3 +13,28 @@ const db = mysql.createConnection(
 
     console.log('Connected to employee_tracker-db database.')
         );
+
+    const init = () => {
+        inquirer
+        .prompt([
+            {
+                type: "list",
+                message: "Please select from the following questions:",
+                name: "initialize", 
+                choice: [
+                    "Departments",
+                    "Roles",
+                    "Employees",
+                    "Add Department",
+                    "Add Role",
+                    "Add Employee",
+                    "Update Employee Role",
+                    "Finished"
+
+                ]
+            }
+            
+
+                ]
+            }
+        ])    }
