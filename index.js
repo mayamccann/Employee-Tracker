@@ -119,7 +119,26 @@ const db = mysql.createConnection(
             return arrNames
         })
 
-        
+        inquirer
+        .prompt ([
+            type: "input", 
+            message: "What is role to add"
+            name: "roleTitle"
+        },
+
+        type: "input", 
+        message: "What is the salary",
+        name: "roleSalary"
+    },
+
+    {
+        type: "list",
+        message: "Which department is this role in",
+        name: "addDept",
+        choices: "deptChoices"
+
     }
+
+
 
 
