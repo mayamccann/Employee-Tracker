@@ -172,6 +172,20 @@ const addEmployee = () => {
 
         },
 
-        
+    ]).then(ans => {
+        db.query('INSERT INTO employees(first-name, last_name')
+        VALUES(?,?), [ans.firstName, ans.lastName], (err, results) => {
+            if (err) {
+                console.log(err)
+            }
+        } else {
+            db.query('SELECT * FROM employees', (err, results) => {
+                err ? console.err(err) : console.table(results); 
+                init ();
+                
+            })
+        }
+    })
+
 
 
