@@ -33,8 +33,27 @@ const db = mysql.createConnection(
 
                 ]
             }
-            
 
-                ]
+
+        ]).then(ans => {
+            switch (ans.initialilze) {
+                case "Departments" : viewDept();
+                break;
+                case "Roles": viewRoles();
+                break;
+                case "Employees": viewEmployees();
+                break;
+                case "Add Department": addDept();
+                break;
+                case "Add Role": addRole ();
+                break;
+                case "Add Employee": addEmployee ();
+                break;
+                case "Update Employee Role": updateEmployee ();
+                break;
+                case "Finished":
+                    console.log("Thank you for this completion.");
+                    process.exit();
             }
-        ])    }
+            catch(err => console.error(err));
+            
