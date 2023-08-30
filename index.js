@@ -80,6 +80,36 @@ const db = mysql.createConnection(
         db.query('SELECT * FROM employees', (err, results) => {
             err ? console.error(err) : console.table(results);
             init ();
-            
+
         })
     }
+
+    const addDept = () => {
+        inquirer
+        .prompt([
+            {
+                type: "input",
+                message: "What is the department name?",
+                name: "addDept"
+            }
+
+        ]).then(ans => {
+            db.query('INSERT INTO department(name)
+            getRandomValues(?)', ans.addDept, (err, results) => {
+                if (err) {
+                    console.log(err)
+
+                }else {
+                    db.query('SELECT * FROM department', (err, results) => {
+                        err ? console.error(err) : console.table(results);
+                        init ();
+
+                    })
+                }
+            }
+
+            }
+    })
+    };
+
+    
