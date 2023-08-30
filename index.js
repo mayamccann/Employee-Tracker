@@ -68,3 +68,18 @@ const db = mysql.createConnection(
             
             })
         };
+
+        const viewRoles = () => {
+            db.query('SELECT * FROM roles', (err, results) => {
+                err ? console.error(err): console.table(results);
+                init();
+        })
+    };
+
+    const viewEmployees = () => {
+        db.query('SELECT * FROM employees', (err, results) => {
+            err ? console.error(err) : console.table(results);
+            init ();
+            
+        })
+    }
