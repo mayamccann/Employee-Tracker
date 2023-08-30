@@ -147,6 +147,31 @@ const db = mysql.createConnection(
     })
 }]
 
+.then((mappedId) => {
+    db.promise().query('INSERT INTO roles(title, salary, department_id)
+    VALUES (?, ?, ?), [ans.roleSalary, mappedId]);
+    init ()
+})
+})
+};
 
+const addEmployee = () => {
+    inquier 
+    .prompt([
+        {
+            type: "input",
+            message: "What is employee name, first",
+            name: "firstname"
+        },
+
+
+        { 
+            type: "input".
+            message: "What is last name",
+            name: "lastname"
+
+        },
+
+        
 
 
