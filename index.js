@@ -139,6 +139,14 @@ const db = mysql.createConnection(
 
     }
 
+]).then[ans => {
+    db.promise().query('SELECT id FROM department WHERE name = ?', ans.addDept)
+    .then(answer => {
+        let mappedID = answer[0].map(obj => obj.id);
+        return mappedId[0]
+    })
+}]
+
 
 
 
