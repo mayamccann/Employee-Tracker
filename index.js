@@ -56,4 +56,15 @@ const db = mysql.createConnection(
                     process.exit();
             }
             catch(err => console.error(err));
+
+        }
+
+        init ();
+
+        const viewDept = () => {
+            db.query ('SELECT * FROM department', (err, results) => {
+                err ? console.error(err) : console.table(results);
+                init ();
             
+            })
+        };
