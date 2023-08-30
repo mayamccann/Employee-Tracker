@@ -112,4 +112,14 @@ const db = mysql.createConnection(
     })
     };
 
-    
+    const addRole = () => {
+        const deptChoices = () => db.promise().query('SELECT * FROM department')
+        .then((rows) => {
+            let arrNames = rows[0].map(obj => obj.name);
+            return arrNames
+        })
+
+        
+    }
+
+
